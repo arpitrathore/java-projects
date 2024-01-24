@@ -1,6 +1,6 @@
 package com.arpitrathore;
 
-import com.arpitrathore.log.SysLogger;
+import com.arpitrathore.util.ConsoleLogger;
 import com.arpitrathore.util.FileUtil;
 import io.quarkus.runtime.QuarkusApplication;
 import io.quarkus.runtime.annotations.QuarkusMain;
@@ -11,7 +11,7 @@ import java.util.Arrays;
 public class Application implements QuarkusApplication {
 
   @Inject
-  private SysLogger log;
+  private ConsoleLogger log;
 
   @Inject
   private FileUtil fileUtil;

@@ -1,7 +1,6 @@
 package com.arpitrathore.util;
 
 import com.arpitrathore.builder.PomModelBuilder;
-import com.arpitrathore.log.SysLogger;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import java.io.File;
@@ -22,7 +21,7 @@ public class FileUtil {
   private static final String GIT_IGNORE_FILE_NAME = "/gitignore.txt";
 
   @Inject
-  private SysLogger log;
+  private ConsoleLogger log;
 
   /**
    * Generates maven project under directory specified by artifact id.

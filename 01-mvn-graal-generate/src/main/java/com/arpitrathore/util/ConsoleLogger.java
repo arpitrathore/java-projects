@@ -1,4 +1,4 @@
-package com.arpitrathore.log;
+package com.arpitrathore.util;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import org.eclipse.microprofile.config.inject.ConfigProperty;
@@ -7,7 +7,7 @@ import org.eclipse.microprofile.config.inject.ConfigProperty;
  * @author arathore
  */
 @ApplicationScoped
-public class SysLogger {
+public class ConsoleLogger {
 
   @ConfigProperty(name = "debug.enabled")
   private String debugEnabled;
