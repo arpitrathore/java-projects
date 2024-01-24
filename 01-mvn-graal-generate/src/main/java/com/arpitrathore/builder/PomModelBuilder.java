@@ -77,8 +77,7 @@ public class PomModelBuilder {
   private static Properties buildProperties(final String groupId) {
     final var properties = new Properties();
     properties.setProperty("project.build.sourceEncoding", "UTF-8");
-    properties.setProperty("maven.compiler.source", "21");
-    properties.setProperty("maven.compiler.target", "21");
+    properties.setProperty("maven.compiler.release", "21");
     properties.setProperty("native-maven-plugin.version", "0.9.28");
     properties.setProperty("main.class", groupId + ".Application");
     return properties;
