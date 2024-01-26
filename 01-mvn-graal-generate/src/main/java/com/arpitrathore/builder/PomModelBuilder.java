@@ -29,7 +29,7 @@ public class PomModelBuilder {
     model.setVersion("0.0.1-SNAPSHOT");
     model.setName(artifactId);
 
-    model.setProperties(buildProperties(groupId));
+    model.setProperties(buildProperties(groupId, artifactId));
     model.setProfiles(buildProfiles());
     return model;
   }
@@ -63,6 +63,9 @@ public class PomModelBuilder {
     final var mainClass = new Xpp3Dom("mainClass");
     mainClass.setValue("${main.class}");
 
+    final var imageName = new Xpp3Dom("imageName");
+    imageName.setValue("${image.name}");
+
     final var enabled = new Xpp3Dom("enabled");
     enabled.setValue("true");
     final var agent = new Xpp3Dom("agent");
@@ -70,16 +73,19 @@ public class PomModelBuilder {
 
     final var configuration = new Xpp3Dom("configuration");
     configuration.addChild(mainClass);
+    configuration.addChild(imageName);
     configuration.addChild(agent);
     return configuration;
   }
 
-  private static Properties buildProperties(final String groupId) {
+  private static Properties buildProperties(final String groupId, final String artifactId) {
     final var properties = new Properties();
-    properties.setProperty("project.build.sourceEncoding", "UTF-8");
-    properties.setProperty("maven.compiler.release", "21");
-    properties.setProperty("native-maven-plugin.version", "0.9.28");
     properties.setProperty("main.class", groupId + ".Application");
+    properties.setProperty("image.name", artifactId);
+
+    properties.setProperty("maven.compiler.release", "21");
+    properties.setProperty("project.build.sourceEncoding", "UTF-8");
+    properties.setProperty("native-maven-plugin.version", "0.9.28");
     return properties;
   }
 }
