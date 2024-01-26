@@ -1,5 +1,5 @@
-# Maven graal vm project generator
-THis tool generates a maven project with graal vm maven plugin configured
+# Maven Graal vm project generator
+This tool generates a maven project with graal vm maven plugin configured
 
 ### Build native binary
 
