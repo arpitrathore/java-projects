@@ -82,8 +82,8 @@ public class PomModelBuilder {
     final var properties = new Properties();
     properties.setProperty("main.class", groupId + ".Application");
     properties.setProperty("image.name", artifactId);
-
-    properties.setProperty("maven.compiler.release", "21");
+    properties.setProperty("maven.compiler.source", "21");
+    properties.setProperty("maven.compiler.target", "21");
     properties.setProperty("project.build.sourceEncoding", "UTF-8");
     properties.setProperty("native-maven-plugin.version", "0.9.28");
     return properties;
